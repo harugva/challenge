@@ -1,0 +1,59 @@
+<template>
+    <div class="container">
+        <lightning-card class="slds-card" if:true={selectedMission}>
+                <div class="main-div">
+                    <div class="main-div-header">
+                        <div class="main-div-header-div1">
+                            <h1 class="main-div-header-h1-1">Mission Detail <img src={lightningIcon}/></h1>
+                        </div>
+                        <div class="main-div-header-div2">
+                            <h1 class="main-div-header-h1-2"><img src={vectorIcon}/> {selectedMission.guildName}</h1>
+                        </div>
+                    </div>
+                    <div class="main-div-info">
+                            <div class="main-div-info-subject">
+                                <p class="info-header">Subject</p>
+                                <p class="info-field">{selectedMission.subject}</p>
+                            </div>
+                            <div class="main-div-info-details">
+                                <p class="info-header">Details</p>
+                                <p class="info-field">{selectedMission.details}</p>
+                            </div>
+                            <div class="main-div-info-rank">
+                                <p class="info-header">Rank</p>
+                                <p class="info-field">{selectedMission.missionRank}</p>
+                            </div>
+                            <div class="main-div-info-line"></div>
+                            <div class="main-div-info-reward">
+                                <p class="info-header">Reward</p>
+                                <template if:true={selectedMission.reward}>
+                                    <p class="info-field">$ {selectedMission.reward}</p>
+                                </template>
+                                <template if:false={selectedMission.reward}>
+                                    <p class="info-field"></p>                                
+                                </template>
+                            </div>
+                            <div class="main-div-info-deadline">
+                                <p class="info-header">Deadline</p>
+                                <p class="info-deadline">{selectedMission.deadline}</p>
+                            </div>
+                    </div>
+                    <div class="main-div-buttons">
+                        <template if:true={showApplyButton}>
+                            <button class="apply-button" onclick={handleApplyClick}>Accept</button>
+                        </template>
+                        <template if:true={showCompleteButton}>
+                            <button class="complete-button" onclick={handleCompleteClick}>Complete</button>
+                        </template>
+                    </div>
+                </div>
+        </lightning-card>
+        <lightning-card class="slds-card">
+            <template if:false={selectedMission}>
+                <div class="help-message">
+                {messageIfNotClicked}
+                </div>
+            </template>
+        </lightning-card>
+    </div>
+</template>

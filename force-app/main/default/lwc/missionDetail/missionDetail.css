@@ -1,0 +1,140 @@
+.container {
+    height: 800px;
+    border-radius: 20px;
+    padding-top: 16px;
+    padding-left: 24px;
+    padding-bottom: 32px;
+    padding-right: 24px;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.main-div {
+    height: 400px;
+}
+.main-div-header {
+    height: 34px;
+    width: 100%;
+    display: flex;
+}
+.main-div-header-div1 {
+    width: fit-content;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+    min-width: 1px;  
+}
+.main-div-header-h1-1 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+}
+.main-div-header-div2 {
+    max-width: 45%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+    min-width: 1px;  
+}
+.main-div-header-h1-2 {
+    font-weight: 510;
+    font-size: 16px;
+    line-height: 32px;
+    text-align: right;
+    color: rgba(24, 24, 24, 1);
+}
+
+.main-div-info {
+    height: 300px;
+}
+.main-div-info-subject {
+    height: 19%;
+    padding-top: 16px;
+}
+.main-div-info-details {
+    height: 23%;
+    padding-top: 12px;
+}
+.main-div-info-rank {
+    height: 19%;
+    padding-top: 12px;
+    margin-bottom: 6px;
+}
+.main-div-info-line {
+    width: 90%;
+    height: 1px;
+    background-color: rgba(210, 210, 210, 1);
+}
+.main-div-info-reward {
+    height: 19%;
+    padding-top: 14px;
+}
+.main-div-info-deadline {
+    height: 19%;
+    padding-top: 12px;
+}
+.info-header {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: -0.006em;
+    text-align: left;
+    color: rgba(104, 112, 118, 1);
+}
+.info-field {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.015em;
+    text-align: left;
+    color: rgba(24, 24, 24, 1);
+    max-height: 40px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.info-deadline {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.015em;
+    text-align: left;
+    color: rgba(229, 72, 77, 1);
+}
+
+.main-div-buttons {
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+.apply-button {
+    height: 32px;
+    width: 184px;
+    border-radius: 4px;
+    border-width: 0px;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(30, 30, 30, 1);
+}
+.complete-button {
+    height: 32px;
+    width: 184px;
+    border-radius: 4px;
+    border-width: 1px;
+    color: rgba(48, 68, 79, 1);
+    background-color: rgba(255, 255, 255, 1);
+    border-color: rgba(48, 68, 79, 1);
+}
+
+.slds-card {
+    border-width: 0px;
+}
+
+.help-message {
+    text-align: center;
+}

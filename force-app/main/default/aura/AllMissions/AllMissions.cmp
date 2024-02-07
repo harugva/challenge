@@ -1,0 +1,47 @@
+<aura:component controller="AllMissionsController" implements="forceCommunity:availableForAllPageTypes" access="global">
+   
+    <lightning:messageChannel type="AllMissionMessageChannel__c" aura:id="allMissionMessageChannel"/>
+    <lightning:messageChannel type="AllMissionMessageChannel__c" onMessage="{!c.handleChanged}"/>
+    <aura:attribute name="data" type="AllMissionsController.SuperheroMissionWrapper" />
+    <aura:attribute name="selectedMission" type="AllMissionsController.SuperheroMissionWrapper" />
+    <aura:attribute name="userId" type="String" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <div>
+        <div class="header-div">
+            <h1 class="header-div-h1">All Missions <img src="{!$Resource.Diamond_Icon}"/></h1>
+        </div>
+        
+        <div class="table-div">
+            <table class="slds-table" style="table-layout:auto">
+                <thead>
+                    <tr>
+                        <th class="header-cell-1" scope="col">
+                            <div class="slds-truncate header-text" title="Column 1">Rank</div>
+                        </th>
+                        <th class="header-cell-2" scope="col">
+                            <div class="slds-truncate header-text" title="Column 2">Mission</div>
+                        </th>
+                        <th class="header-cell-3" scope="col">
+                            <div class="slds-truncate header-text" title="Column 3">Guild</div>
+                        </th>
+                        <th class="header-cell-4" scope="col">
+                            <div class="slds-truncate header-text" title="Column 4">Status</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <aura:iteration items="{!v.data}" var="rowData">
+                        <tr class="slds-border_bottom" style="height:48px" data-myid="{!rowData.missionId}" onclick="{!c.showRow }">
+                            <td class="table-column-1"><div class="table-column-1-inner-div">{!rowData.missionRank}</div></td>
+                            <td class="table-column-2">{!rowData.subject}</td>
+                            <td class="table-column-3">{!rowData.guildName}</td>
+                            <td class="table-column-4"><div class="table-column-4-inner-div" style="{!'background-color: #' + (rowData.status == 'Completed' ? '7E868C' : rowData.status == 'In progress' ? '0176D3' : '46A758')}">{!rowData.status}</div></td>
+                        </tr>
+                    </aura:iteration>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</aura:component>
